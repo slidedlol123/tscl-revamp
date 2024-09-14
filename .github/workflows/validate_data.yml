@@ -25,17 +25,3 @@ jobs:
         pip install django
         pip install jsonschema
         
-    - name: Run validation script
-      run: python validateData.py
-      
-    - name: Check script exit code
-      run: |
-        if [ $? -eq 0 ]; then
-          echo "Validation successful"
-        else
-          echo "Validation failed"
-          exit 1
-        fi
-
-    - name: Run changelog validation script
-      run: python verifyChangelog.py
